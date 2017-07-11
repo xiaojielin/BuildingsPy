@@ -1,5 +1,3 @@
-group: deprecated-2017Q2
-
 dist: trusty
 
 language: python
@@ -43,6 +41,13 @@ install:
   - pip install --only-binary=numpy,scipy,matplotlib numpy scipy matplotlib
   - pip install autopep8
   - pip install .
+
+# Print version of tools
+before_script:
+  - python --version
+  - pip --version
+  - docker --version
+  - omc --version
 
 # Execute tests
 script:
