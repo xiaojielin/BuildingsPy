@@ -35,6 +35,7 @@ before_install:
   - sudo chmod +x /usr/local/bin/dymola
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
   - docker pull "$DOCKER_USERNAME"/travis_ubuntu-1604_dymola-2017fd01-x86-64
+  - sudo chown -R $UID:$UID /mnt/shared
 
 install:
   - pip install --upgrade pip setuptools wheel
